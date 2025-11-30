@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkScale | Wholesale to Retail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=VT323&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              y2k: ['Orbitron', 'sans-serif'],
+              mono: ['VT323', 'monospace'],
+              hand: ['Patrick Hand', 'cursive'],
+              mag: ['Playfair Display', 'serif'],
+              serif: ['Lora', 'serif'],
+            },
+            colors: {
+              neutral: {
+                50: '#f9fafb',
+                100: '#f3f4f6',
+                200: '#e5e7eb',
+                300: '#d1d5db',
+                400: '#9ca3af',
+                500: '#6b7280',
+                600: '#4b5563',
+                700: '#374151',
+                800: '#1f2937',
+                900: '#111827',
+                950: '#030712',
+              },
+              neu: {
+                base: '#E0E5EC',
+                text: '#4A5568',
+                accent: '#667EEA',
+                shadow: {
+                  light: '#ffffff',
+                  dark: '#a3b1c6'
+                }
+              },
+              y2k: {
+                pink: '#FF00CC',
+                blue: '#00FFFF',
+                lime: '#CCFF00',
+                purple: '#9D00FF',
+                silver: '#C0C0C0',
+              },
+              illus: {
+                paper: '#fffdf5',
+                ink: '#2c2c2c',
+                yellow: '#fcd34d',
+                blue: '#93c5fd',
+                green: '#86efac',
+                pink: '#f9a8d4',
+              },
+              dark: {
+                bg: '#050505',
+                surface: '#121212',
+                border: '#27272a',
+                primary: '#3b82f6',
+                accent: '#8b5cf6',
+                text: '#e4e4e7',
+                muted: '#a1a1aa'
+              },
+              mag: {
+                bg: '#F9F7F1',
+                paper: '#F2F0E9',
+                text: '#1A1A1A',
+                accent: '#000000',
+              },
+              skeu: {
+                bg: '#e2e2e2',
+                panel: '#f0f0f0',
+                dark: '#333333',
+                leather: '#4a3b32',
+                metal: '#a0a0a0',
+              }
+            },
+            boxShadow: {
+              'neu-flat': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+              'neu-pressed': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+              'neu-convex': '5px 5px 10px #b8b9be, -5px -5px 10px #ffffff',
+              'clay-card': '12px 12px 24px rgba(163, 177, 198, 0.3), inset -8px -8px 12px rgba(163, 177, 198, 0.1), inset 8px 8px 12px rgba(255, 255, 255, 1)',
+              'clay-btn': '8px 8px 16px rgba(163, 177, 198, 0.4), inset -4px -4px 8px rgba(163, 177, 198, 0.2), inset 4px 4px 8px rgba(255, 255, 255, 0.8)',
+              'clay-btn-pressed': 'inset 6px 6px 10px rgba(163, 177, 198, 0.3), inset -6px -6px 10px rgba(255, 255, 255, 0.8)',
+              'y2k-glow': '0 0 10px #FF00CC, 0 0 20px #FF00CC',
+              'y2k-blue-glow': '0 0 10px #00FFFF, 0 0 20px #00FFFF',
+              'sketch': '2px 2px 0px rgba(0,0,0,0.8)',
+              'dark-glow': '0 0 15px rgba(59, 130, 246, 0.4)',
+              'dark-glow-hover': '0 0 25px rgba(139, 92, 246, 0.6)',
+              'skeu-bevel': 'inset 1px 1px 0px rgba(255,255,255,0.7), inset -1px -1px 0px rgba(0,0,0,0.2), 2px 2px 5px rgba(0,0,0,0.2)',
+              'skeu-inner': 'inset 2px 2px 5px rgba(0,0,0,0.2), inset -1px -1px 0px rgba(255,255,255,0.7)',
+              'skeu-button': '0 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
+              'skeu-text': '0px 1px 0px rgba(255,255,255,0.8)',
+              'skeu-text-dark': '0px -1px 0px rgba(0,0,0,0.5)',
+            },
+            borderRadius: {
+              'sketch': '255px 15px 225px 15px / 15px 225px 15px 255px',
+              'sketch-sm': '25px 5px 25px 5px / 5px 25px 5px 25px',
+            },
+            animation: {
+              'blob': 'blob 7s infinite',
+              'glitch': 'glitch 1s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'wobble-slow': 'wobble 4s ease-in-out infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              wobble: {
+                '0%, 100%': { borderRadius: '255px 15px 225px 15px / 15px 225px 15px 255px' },
+                '33%': { borderRadius: '225px 15px 255px 15px / 255px 15px 225px 15px' },
+                '66%': { borderRadius: '15px 225px 15px 255px / 255px 15px 225px 15px' },
+              }
+            },
+            backgroundImage: {
+               'chrome': 'linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #a0a0a0 51%, #e0e0e0 100%)',
+               'y2k-gradient': 'linear-gradient(90deg, #FF00CC 0%, #9D00FF 50%, #00FFFF 100%)',
+               'dark-gradient': 'radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%)',
+               'skeu-metal': 'linear-gradient(180deg, #f0f0f0 0%, #dcdcdc 50%, #b0b0b0 51%, #e0e0e0 100%)',
+               'skeu-blue-gloss': 'linear-gradient(180deg, #60a5fa 0%, #3b82f6 50%, #2563eb 51%, #1d4ed8 100%)',
+               'skeu-dark-gloss': 'linear-gradient(180deg, #4b5563 0%, #374151 50%, #1f2937 51%, #111827 100%)',
+               'skeu-leather': 'radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px), radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom utility for hiding scrollbar but keeping functionality */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      /* Y2K Grid Background */
+      .bg-grid-y2k {
+        background-size: 40px 40px;
+        background-image: 
+          linear-gradient(to right, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+      }
+      
+      /* Paper Texture for Illustrative Theme */
+      .bg-paper {
+        background-color: #fffdf5;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+
+      /* Skeuomorphic Leather Texture */
+      .bg-skeu-leather {
+        background-color: #2c2a26;
+        background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
